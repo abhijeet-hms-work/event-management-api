@@ -34,7 +34,7 @@ app.use('/api/events', eventRoutes);
 app.use('/api/users', userRoutes);
 
 // 404 handler
-app.all('*', (req, res) => {
+app.use((req, res) => {
     res.status(404).json({
         status: 'fail',
         message: `Route ${req.originalUrl} not found`
